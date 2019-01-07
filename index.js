@@ -16,14 +16,15 @@ function denonClient(log, config) {
   this.config = config;
   this.name = config['name'];
   this.ip = config['ip'];
-  this.pollingInterval = 15000; //every 15 seconds
+  this.pollingInterval = config['pollingInterval'] || 3;
+  this.pollingInterval = this.pollingInterval * 1000;
 
   this.requiredInput = config['requiredInput'] || false;
   this.debug = config['debug'] || false;
 
-  // Start the polling loop. It will be started after a random interval between 0 and 15 seconds to make sure
+  // Start the polling loop. It will be started after a random interval between 0 and 5 seconds to make sure
   // we don't poll all switches at the same time.
-  setTimeout(this.pollForUpdates, Math.random() * 15000, this);
+  setTimeout(this.pollForUpdates, Math.random() * 5000, this);
 }
 
 /**
