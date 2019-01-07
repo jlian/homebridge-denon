@@ -8,9 +8,11 @@ the node-denon-client and has little to no documentation.
 The plugin registers as `hombridge-denon-avr` to avoid ambuigity with another plugin that already exists `homebridge-denon`,
 which I found not to work with newer Denon AVR generations (mine is X1400). Until I find out how to publish node packages, use
 
-`git clone`
-`cd homebridge-denon`
-`sudo npm -g install .`
+```
+git clone
+cd homebridge-denon
+sudo npm -g install .
+```
 
 ## Idea
 
@@ -27,6 +29,8 @@ and update accordingly.
 ## Config
 
 See sample-config.json. `requireInput` can be (untested): 'CD', 'SPOTIFY', 'CBL/SAT', 'DVD', 'BD', 'GAME', 'GAME2', 'AUX1', 'MPLAY', 'USB/IPOD', 'TUNER', 'NETWORK', 'TV', 'IRADIO', 'SAT/CBL', 'DOCK', 'IPOD', 'NET/USB', 'RHAPSODY', 'PANDORA', 'LASTFM', 'IRP', 'FAVORITES', 'SERVER'.
+
+To change how often the input state is polled, set a value for `pollingInterval`. The default is 3 seconds.
 
 ## Further Reading and Thanks
 
